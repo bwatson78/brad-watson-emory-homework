@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "home path", :type => :request do
+RSpec.describe 'home path', type: :request do
   before(:each) do
     get '/'
   end
@@ -22,7 +24,8 @@ RSpec.describe "home path", :type => :request do
   end
 
   it 'should have the correct body text' do
-    test_text = "Welcome to Rails Bookshelf! A Website specifically designed to keep track of author's books."
-    expect(response.body).to include(test_text)
+    test_text1 = 'Welcome to Rails Bookshelf! A Website specifically designed '
+    test_text2 = "to keep track of author's books."
+    expect(response.body).to include(test_text1 + test_text2)
   end
 end
