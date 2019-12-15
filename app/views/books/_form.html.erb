@@ -17,8 +17,18 @@
   </div>
 
   <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author %>
+    <%= form.label :publisher %>
+    <%= form.text_field :publisher %>
+  </div>
+
+  <div class="field">
+    <%= form.label :publisher_city, 'City of Publisher Headquarters' %>
+    <%= form.text_field :publisher_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :publish_year, "Year Published" %>
+    <%= form.number_field :publish_year %>
   </div>
 
   <div class="actions">

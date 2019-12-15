@@ -1,0 +1,30 @@
+<h2>Author's Details</h2>
+<ul>
+	<li>Name: <%= @author.full_name %></li>
+	<li>Hometown: <%= @author.home_town %>, <%= @author.home_state %></li>
+	<li>Birthdate: <%= @author.dob %></li>
+</ul>
+
+<% if author_signed_in? && current_author == @author %>
+	<%= button_to 'Edit Profile', edit_author_registration_path, :method => :get %>
+	<br>
+	<%= button_to 'Add Books', new_book_path, :method => :get %>
+<% end %>
+
+<h4>Books Published</h4>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Year Published</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @author.books.each do |book| %>
+	    <tr onclick="location.href='<%= book_path(book) %>'"> 
+	      <th><%= book.title %></th>
+	      <td><%= book.publish_year %></td>
+	    </tr>
+    <% end %>
+  </tbody>
+</table>
