@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# creates the schema needed for the authors table
 class DeviseCreateAuthors < ActiveRecord::Migration[5.2]
   def up
     create_table :authors do |t|
@@ -36,10 +37,10 @@ class DeviseCreateAuthors < ActiveRecord::Migration[5.2]
       # t.string   :unconfirmed_email # Only if using reconfirmable
 
       ## Lockable
-      # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
+      # t.integer  :failed_attempts, default: 0, null: false # Only if lock
+      # strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
-
 
       t.timestamps null: false
     end
